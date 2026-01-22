@@ -28,7 +28,7 @@ export function StoryView() {
       </div>
       
       {/* GLOBAL FIXED NAV */}
-      <div className="fixed top-8 left-8 md:top-12 md:left-12 z-50 pointer-events-none">
+      <div className="fixed top-4 left-4 md:top-12 md:left-12 z-50 pointer-events-none">
           <h1 className="flex flex-col text-2xl md:text-4xl font-bold leading-[0.85] tracking-tighter">
               <span>
                 <motion.span style={{ color: textColor }}>R</motion.span>
@@ -37,7 +37,7 @@ export function StoryView() {
               </span>
           </h1>
       </div>
-      <div className="fixed top-8 right-8 md:top-12 md:right-12 z-50">
+      <div className="fixed top-4 right-4 md:top-12 md:right-12 z-50">
           <motion.a
               href = "https://ik.imagekit.io/s2kOp/Rohit_R_Nair_January_2026.pdf" 
               download  

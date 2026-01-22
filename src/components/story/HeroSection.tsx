@@ -53,7 +53,7 @@ export function HeroSection() {
              {/* Line 1: Neon Green L->R */}
              <div className="w-full overflow-hidden flex whitespace-nowrap">
                  <motion.div 
-                    className="flex gap-4 sm:gap-20 text-[12vh] md:text-[16vh] font-black text-[#ccff00] leading-none"
+                    className="flex gap-4 sm:gap-20 text-[12vw] md:text-[16vh] font-black text-[#ccff00] leading-none"
                     animate={{ x: ["-20%", "0%"] }} 
                     transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                  >
@@ -65,7 +65,7 @@ export function HeroSection() {
              {/* Line 2: White R->L */}
              <div className="w-full overflow-hidden flex whitespace-nowrap">
                  <motion.div 
-                    className="flex gap-4 sm:gap-20 text-[12vh] md:text-[16vh] font-black text-white leading-none"
+                    className="flex gap-4 sm:gap-20 text-[12vw] md:text-[16vh] font-black text-white leading-none"
                     animate={{ x: ["0%", "-20%"] }} 
                     transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
                  >
@@ -95,7 +95,7 @@ export function HeroSection() {
                 filter: cardFilter,
                 backgroundColor: cardBg
             }}
-            className="relative z-10 w-screen h-screen overflow-hidden shadow-2xl flex flex-col items-center justify-end origin-center"
+            className="relative z-10 w-full h-screen overflow-hidden shadow-2xl flex flex-col items-center justify-end origin-center"
         >
             {/* 1. Dark Hypnotic Circles (Fade Out) */}
             <motion.div style={{ opacity: darkCirclesOpacity }} className="absolute inset-0">

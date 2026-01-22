@@ -35,8 +35,8 @@ export function GallerySection() {
            const offset = index - centerInfo; 
            
            // Responsive values
-           const rotation = offset * (isMobile ? 8 : 12); // Slightly less rotation on mobile
-           const spreadFactor = isMobile ? 40 : 120; // Much tighter spread on mobile
+           const rotation = offset * (isMobile ? 6 : 12); // Reduced rotation on mobile
+           const spreadFactor = isMobile ? 30 : 120; // Tighter spread
            const xOffset = offset * spreadFactor; 
            
            const isHovered = hoveredIndex === index;
@@ -46,7 +46,7 @@ export function GallerySection() {
               <motion.div
                 key={card.id}
                 className={clsx(
-                    "absolute w-[260px] md:w-[320px] aspect-[2/3] rounded-2xl shadow-2xl border border-zinc-800 bg-zinc-900 overflow-hidden cursor-pointer transition-all duration-500 ease-out origin-bottom",
+                    "absolute w-[240px] md:w-[320px] aspect-[2/3] rounded-2xl shadow-2xl border border-zinc-800 bg-zinc-900 overflow-hidden cursor-pointer transition-all duration-500 ease-out origin-bottom",
                     isHovered ? "z-50 border-[#ccff00]" : "z-10 hover:border-zinc-600"
                 )}
                 style={{

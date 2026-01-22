@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef,useState,useEffect } from "react";
 
 // Icons
 import pythonIcon from "@/assets/icons/python.svg";
@@ -58,15 +58,22 @@ const SKILLS = [
 function SkillItem({ 
     skill, 
     spreadProgress, 
-    skillsOpacity 
+    skillsOpacity,
+    isMobile
 }: { 
     skill: typeof SKILLS[0], 
     spreadProgress: any, // MotionValue<number>
-    skillsOpacity: any   // MotionValue<number>
+    skillsOpacity: any,   // MotionValue<number>
+    isMobile: boolean
 }) {
     // Hooks must be called at top level of component
-    const x = useTransform(spreadProgress, [0, 1], [0, skill.x]);
-    const y = useTransform(spreadProgress, [0, 1], [0, skill.y]);
+    // Scale down coordinates on mobile (50% of desktop spread)
+    const mobileScale = 0.5;
+    const targetX = isMobile ? skill.x * mobileScale : skill.x;
+    const targetY = isMobile ? skill.y * mobileScale : skill.y;
+
+    const x = useTransform(spreadProgress, [0, 1], [0, targetX]);
+    const y = useTransform(spreadProgress, [0, 1], [0, targetY]);
     
     return (
         <motion.div
@@ -78,8 +85,8 @@ function SkillItem({
             }}
             className="absolute z-0 flex flex-col items-center justify-center gap-2"
         >
-             {/* BIMODAL INCREASE: w-20 h-20 (from w-12/14) */}
-             <div className="w-20 h-20 md:w-24 md:h-24 p-4 rounded-full border border-[rgba(204,255,0,0.15)] bg-black/90 backdrop-blur-sm shadow-[0_0_25px_rgba(204,255,0,0.1)] flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+             {/* BIMODAL INCREASE: w-20 h-20 (from w-12/14) - Smaller on mobile */}
+             <div className="w-14 h-14 md:w-24 md:h-24 p-3 md:p-4 rounded-full border border-[rgba(204,255,0,0.15)] bg-black/90 backdrop-blur-sm shadow-[0_0_25px_rgba(204,255,0,0.1)] flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
                 <img src={skill.icon.src} alt={skill.name} className="w-full h-full object-contain opacity-90" />
             </div>
         </motion.div>
@@ -92,6 +99,15 @@ export function TransformationSection() {
     target: containerRef,
     offset: ["start start", "end end"]
   });
+  
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // --- Animation Phases ---
   // 0.0 - 0.1 : Fade in Text "SO...WHAT DO I ACTUALLY KNOW?" (Very fast)
@@ -126,6 +142,7 @@ export function TransformationSection() {
                         skill={skill} 
                         spreadProgress={spreadProgress} 
                         skillsOpacity={skillsOpacity} 
+                        isMobile={isMobile}
                     />
                 ))}
             </div>
