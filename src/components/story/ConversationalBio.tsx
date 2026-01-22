@@ -118,7 +118,7 @@ export function ConversationalBio() {
             {/* --- BEAT 6: RESUME CTA --- */}
             <motion.div 
                 style={{ opacity: beat6Raw }} 
-                className="relative mt-8 md:mt-0 md:absolute self-end -bottom-16 md:bottom-auto md:top-20 md:right-0 z-50 text-right"
+                className="relative mt-12 md:mt-0 md:absolute self-end md:bottom-0 md:right-0 z-50 text-right"
             >
                 <div className="flex flex-col items-end gap-2">
                     <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">
