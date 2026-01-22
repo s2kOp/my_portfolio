@@ -67,7 +67,7 @@ export function Loader({ onComplete }: LoaderProps) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center overflow-hidden overscroll-none touch-none w-screen h-[100dvh]"
       exit={{ opacity: 0, transition: { duration: 1.2, ease: "easeInOut" } }}
     >
         {/* Hidden Preloaders */}

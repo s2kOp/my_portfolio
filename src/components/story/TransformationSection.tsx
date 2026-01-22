@@ -26,32 +26,33 @@ import githubIcon from "@/assets/icons/github.svg";
 // Center is (0,0).
 // Skills distributed in a Wide Symmetric Fan Out
 // Center is (0,0).
+// Skills distributed in a Fan Out / Arc from Left to Right
+// Center is (0,0).
 const SKILLS = [
   // --- Left Wing (Fanning out from top-left to bottom-left) ---
   // Inner Arc (Radius ~350-450)
-  { name: "Python", icon: pythonIcon, x: -350, y: -200 },
-  { name: "Java", icon: javaIcon, x: -450, y: -100 },
-  { name: "React", icon: reactIcon, x: -450, y: 100 },
-  { name: "HTML", icon: htmlIcon, x: -350, y: 200 },
+  { name: "Python", icon: pythonIcon, x: -350, y: -200, mobileX: -80, mobileY: -280 },
+  { name: "Java", icon: javaIcon, x: -450, y: -100, mobileX: 80, mobileY: -280 },
+  { name: "React", icon: reactIcon, x: -450, y: 100, mobileX: -40, mobileY: -200 },
+  { name: "HTML", icon: htmlIcon, x: -350, y: 200, mobileX: 40, mobileY: -200 },
 
   // Outer Arc (Radius ~550-650)
-  { name: "TensorFlow", icon: tensorflowIcon, x: -550, y: -250 },
-  { name: "scikitlearn", icon: scikitIcon, x: -650, y: -80 },
-  { name: "Flask", icon: flaskIcon, x: -650, y: 80 },
-  { name: "pandas", icon: pandasIcon, x: -550, y: 250 },
+  { name: "TensorFlow", icon: tensorflowIcon, x: -550, y: -250, mobileX: -120, mobileY: -360 },
+  { name: "scikitlearn", icon: scikitIcon, x: -650, y: -80, mobileX: 0, mobileY: -340 },
+  { name: "Flask", icon: flaskIcon, x: -650, y: 80, mobileX: 120, mobileY: -360 },
+  { name: "pandas", icon: pandasIcon, x: -550, y: 250, mobileX: 0, mobileY: -140 },
 
   // --- Right Wing (Mirrored Positive X) ---
   // Inner Arc
-  { name: "JavaScript", icon: jsIcon, x: 350, y: -200 },
-
-  { name: "MySQL", icon: mysqlIcon, x: 450, y: 0 },
-  { name: "CSS", icon: cssIcon, x: 350, y: 200 },
+  { name: "JavaScript", icon: jsIcon, x: 350, y: -200, mobileX: -80, mobileY: 280 },
+  { name: "MySQL", icon: mysqlIcon, x: 450, y: 0, mobileX: 80, mobileY: 280 },
+  { name: "CSS", icon: cssIcon, x: 350, y: 200, mobileX: -40, mobileY: 200 },
 
   // Outer Arc
-  { name: "Figma", icon: figmaIcon, x: 550, y: -250 },
-  { name: "Git", icon: gitIcon, x: 650, y: -80 },
-  { name: "numpy", icon: numpyIcon, x: 650, y: 80 },
-  { name: "Firebase", icon: firebaseIcon, x: 550, y: 250 },
+  { name: "Figma", icon: figmaIcon, x: 550, y: -250, mobileX: 40, mobileY: 200 },
+  { name: "Git", icon: gitIcon, x: 650, y: -80, mobileX: -120, mobileY: 360 },
+  { name: "numpy", icon: numpyIcon, x: 650, y: 80, mobileX: 0, mobileY: 340 },
+  { name: "Firebase", icon: firebaseIcon, x: 550, y: 250, mobileX: 120, mobileY: 360 },
 ];
 
 // --- Sub-component to handle individual transforms (Hook Rules Fix) ---
@@ -67,10 +68,11 @@ function SkillItem({
     isMobile: boolean
 }) {
     // Hooks must be called at top level of component
-    // Scale down coordinates on mobile (50% of desktop spread)
-    const mobileScale = 0.5;
-    const targetX = isMobile ? skill.x * mobileScale : skill.x;
-    const targetY = isMobile ? skill.y * mobileScale : skill.y;
+    
+    // Desktop: Use standard X/Y
+    // Mobile: Use mobileX/mobileY (VERTICAL fan above/below center)
+    const targetX = isMobile ? skill.mobileX : skill.x;
+    const targetY = isMobile ? skill.mobileY : skill.y;
 
     const x = useTransform(spreadProgress, [0, 1], [0, targetX]);
     const y = useTransform(spreadProgress, [0, 1], [0, targetY]);
