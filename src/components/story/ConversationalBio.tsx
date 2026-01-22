@@ -19,20 +19,20 @@ export function ConversationalBio() {
   // The request says "Stays on screen as the next beat appears".
   // So we just need to fade them IN at specific points.
 
-  const beat1Raw = useTransform(scrollYProgress, [0.05, 0.15], [0, 1]);
-  const beat1Y = useTransform(scrollYProgress, [0.05, 0.15], [20, 0]);
+  const beat1Raw = useTransform(scrollYProgress, [0.02, 0.15], [0, 1]);
+  const beat1Y = useTransform(scrollYProgress, [0.02, 0.15], [20, 0]);
 
-  const beat2Raw = useTransform(scrollYProgress, [0.20, 0.30], [0, 1]);
-  const beat2Y = useTransform(scrollYProgress, [0.20, 0.30], [30, 0]); // From slightly lower
+  const beat2Raw = useTransform(scrollYProgress, [0.18, 0.30], [0, 1]);
+  const beat2Y = useTransform(scrollYProgress, [0.18, 0.30], [30, 0]); // From slightly lower
 
-  const beat3Raw = useTransform(scrollYProgress, [0.35, 0.45], [0, 1]);
-  const beat3X = useTransform(scrollYProgress, [0.35, 0.45], [-20, 0]); // From left
+  const beat3Raw = useTransform(scrollYProgress, [0.33, 0.45], [0, 1]);
+  const beat3X = useTransform(scrollYProgress, [0.33, 0.45], [-20, 0]); // From left
 
-  const beat4Raw = useTransform(scrollYProgress, [0.50, 0.60], [0, 1]);
+  const beat4Raw = useTransform(scrollYProgress, [0.48, 0.60], [0, 1]);
   
-  const beat5Raw = useTransform(scrollYProgress, [0.65, 0.75], [0, 1]);
+  const beat5Raw = useTransform(scrollYProgress, [0.63, 0.75], [0, 1]);
   
-  const beat6Raw = useTransform(scrollYProgress, [0.80, 0.90], [0, 1]); // Resume
+  const beat6Raw = useTransform(scrollYProgress, [0.78, 0.90], [0, 1]); // Resume
 
   // Fade to black at the very end to overlay the text before next section
   const endBlackout = useTransform(scrollYProgress, [0.92, 0.98], [0, 1]);
