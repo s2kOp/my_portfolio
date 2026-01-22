@@ -24,7 +24,7 @@ export function GallerySection() {
   }, []);
 
   return (
-    <section className="relative w-full pt-10 pb-40 bg-transparent overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
+    <section className="relative w-full pt-20 pb-40 bg-transparent flex flex-col items-center justify-center min-h-[80vh]">
       
 
       <div className="relative h-[500px] w-full max-w-6xl flex items-center justify-center">
