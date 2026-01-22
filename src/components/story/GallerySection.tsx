@@ -5,10 +5,10 @@ import clsx from "clsx";
 import { useState, useEffect } from "react";
 
 const CARDS = [
+  { id: "events", title: "EVENTS", media: "https://ik.imagekit.io/s2kOp/events.jpg?updatedAt=1769090452180"},
   { id: "trek", title: "TREK", media: "https://ik.imagekit.io/s2kOp/trek.jpg?updatedAt=1769090420977"},
   { id: "football", title: "FOOTBALL", media: "https://ik.imagekit.io/s2kOp/football.jpg?updatedAt=1769090468967" },
-  { id: "athletics", title: "ATHLETICS", media: "https://ik.imagekit.io/s2kOp/athletics.jpg?updatedAt=1769090436756"},
-  { id: "events", title: "EVENTS", media: "https://ik.imagekit.io/s2kOp/events.jpg?updatedAt=1769090452180"},
+  { id: "athletics", title: "ATHLETICS", media: "https://ik.imagekit.io/s2kOp/athletics.jpg?updatedAt=1769090436756"}
 ];
 
 export function GallerySection() {

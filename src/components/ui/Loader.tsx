@@ -9,12 +9,8 @@ import { useEffect, useState, useRef } from "react";
 // Video Assets to Preload
 // Video Assets to Preload
 const ASSETS = [
-  "https://res.cloudinary.com/do9gzgeyz/video/upload/v1768909723/diving1_uuho8x.mp4",        // Hero (diving1)
-  "https://res.cloudinary.com/do9gzgeyz/video/upload/v1768909745/skillsmashup_xjqukz.mp4",  // Skills Intro
-  "https://res.cloudinary.com/do9gzgeyz/video/upload/v1768909712/diving3_nshxg1.mp4",       // Skydiving/Skills (diving3)
-  "https://res.cloudinary.com/do9gzgeyz/video/upload/v1768909716/kalari_gn1xzx.mov",        // Skills (kalari)
-  "https://res.cloudinary.com/do9gzgeyz/video/upload/v1768909652/calisthenics_ulcjgm.mp4",  // Skills (calisthenics)
-];
+  "https://ik.imagekit.io/s2kOp/rrn_cult.png",       
+]
 
 interface LoaderProps {
   onComplete: () => void;
