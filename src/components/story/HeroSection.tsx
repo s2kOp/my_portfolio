@@ -23,12 +23,7 @@ export function HeroSection() {
   const cardHeight = useTransform(shrinkProgress, (v) => `calc(100vh * ${1 - v} + 35vh * ${v})`);
   const cardRadius = useTransform(scrollYProgress, [0, 0.4], [0, 60]); // Rounds more as it gets smaller
   
-  // Image Movement: Stays anchored to bottom?
-  // User: "place it at the center touching the bottom border... reduce white box... with image inside"
-  // If we scale the box, the image inside scales with it automatically.
-  // We just need to position it correctly initially.
-  
-  // Image Filter: Less aggressive dimming since we are darkening the background color manually
+  // Image Movement
   const cardFilter = useTransform(scrollYProgress, [0, 0.4], ["brightness(1) grayscale(0%)", "brightness(0.8) grayscale(100%)"]);
   
   // Card Background: White -> Dark Grey

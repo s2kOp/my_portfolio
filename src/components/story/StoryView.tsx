@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { HeroSection } from "./HeroSection";
 import { ConversationalBio } from "./ConversationalBio";
 import { TransformationSection } from "./TransformationSection";
+import { ProjectsSection } from "./ProjectsSection";
 import { ConversationalLeadIn } from "./ConversationalLeadIn";
 import { GallerySection } from "./GallerySection";
 import { Footer } from "../layout/Footer";
@@ -59,6 +60,7 @@ export function StoryView() {
         <HeroSection />
         <ConversationalBio />
         <TransformationSection />
+        <ProjectsSection />
         <ConversationalLeadIn />
         <GallerySection />
         <Footer />

@@ -10,27 +10,27 @@ export function ConversationalBio() {
     offset: ["start start", "end end"]
   });
 
-  // --- Animation Ranges (Compressed for 250vh height) ---
-  const beat1Raw = useTransform(scrollYProgress, [0.02, 0.15], [0, 1]);
-  const beat1Y = useTransform(scrollYProgress, [0.02, 0.15], [20, 0]);
+  // --- Animation Ranges (Relaxed for 200vh height) ---
+  const beat1Raw = useTransform(scrollYProgress, [0.05, 0.15], [0, 1]);
+  const beat1Y = useTransform(scrollYProgress, [0.05, 0.15], [20, 0]);
 
-  const beat2Raw = useTransform(scrollYProgress, [0.12, 0.25], [0, 1]);
-  const beat2Y = useTransform(scrollYProgress, [0.12, 0.25], [30, 0]); 
+  const beat2Raw = useTransform(scrollYProgress, [0.15, 0.25], [0, 1]);
+  const beat2Y = useTransform(scrollYProgress, [0.15, 0.25], [30, 0]); 
 
-  const beat3Raw = useTransform(scrollYProgress, [0.22, 0.35], [0, 1]);
-  const beat3X = useTransform(scrollYProgress, [0.22, 0.35], [-20, 0]); 
+  const beat3Raw = useTransform(scrollYProgress, [0.25, 0.35], [0, 1]);
+  const beat3X = useTransform(scrollYProgress, [0.25, 0.35], [-20, 0]); 
 
-  const beat4Raw = useTransform(scrollYProgress, [0.35, 0.48], [0, 1]);
+  const beat4Raw = useTransform(scrollYProgress, [0.38, 0.48], [0, 1]);
   
-  const beat5Raw = useTransform(scrollYProgress, [0.45, 0.60], [0, 1]);
+  const beat5Raw = useTransform(scrollYProgress, [0.52, 0.62], [0, 1]);
   
-  const beat6Raw = useTransform(scrollYProgress, [0.60, 0.80], [0, 1]); // Resume
+  const beat6Raw = useTransform(scrollYProgress, [0.65, 0.75], [0, 1]); // Resume
   
   // Fade to black at the very end
   const endBlackout = useTransform(scrollYProgress, [0.95, 1], [0, 1]);
 
   return (
-    <section ref={containerRef} className="relative h-[250vh] bg-transparent">
+    <section ref={containerRef} className="relative h-[200vh] bg-transparent">
       <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center p-4 md:p-20 z-30">
         
         {/* COMPACT GAP SPACING so it won't overflow screen */}

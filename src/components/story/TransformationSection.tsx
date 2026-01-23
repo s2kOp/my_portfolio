@@ -118,19 +118,19 @@ export function TransformationSection() {
 
   // 1. Fade in content from black (seamless transition from previous section)
   // Text appears almost immediately
-  const textOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.01], [0, 1]);
   
   // 2. Skills Spread Animation
   // Starts after text
   // 0 -> centered (behind text), 1 -> spread out
-  const spreadProgress = useTransform(scrollYProgress, [0.1, 0.7], [0, 1]);
-  const skillsOpacity = useTransform(scrollYProgress, [0.1, 0.25], [0, 1]); // Fade in as they start spreading
+  const spreadProgress = useTransform(scrollYProgress, [0.05, 0.6], [0, 1]);
+  const skillsOpacity = useTransform(scrollYProgress, [0.05, 0.15], [0, 1]); // Fade in as they start spreading
 
   // 3. Social Links
-  const linksOpacity = useTransform(scrollYProgress, [0.5, 0.8], [0, 1]);
+  const linksOpacity = useTransform(scrollYProgress, [0.4, 0.7], [0, 1]);
 
   return (
-    <section ref={containerRef} className="relative h-[200vh] bg-black">
+    <section ref={containerRef} className="relative h-[150vh] bg-black">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
         
         {/* Main Content Container */}

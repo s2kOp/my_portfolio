@@ -9,7 +9,8 @@ import { useEffect, useState, useRef } from "react";
 // Video Assets to Preload
 // Video Assets to Preload
 const ASSETS = [
-  "https://ik.imagekit.io/s2kOp/rrn_cult.png",       
+  "https://ik.imagekit.io/s2kOp/rrn_cult.png",  
+  "https://ik.imagekit.io/s2kOp/Rohit_R_Nair_January_2026.pdf"     
 ]
 
 interface LoaderProps {

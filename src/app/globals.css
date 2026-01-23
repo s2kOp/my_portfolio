@@ -25,6 +25,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden; /* Prevent horizontal scroll from effects */
+  overscroll-behavior: none; /* Prevent rubber-banding on mobile */
   cursor: none; /* Custom cursor will replace this */
 }
 

@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Interactive Story",
-  description: "A narrative experience.",
+  title: "Rohit R Nair",
+  description: "Portfolio",
 };
 
 export default function RootLayout({
