@@ -108,7 +108,7 @@ export function ConversationalBio() {
                 className="flex flex-col gap-2 md:pl-20 border-l-2 border-[#333] pl-6 mt-4"
             >
                  <p className="text-xl md:text-3xl text-white italic">
-                     “I usually learn by doing.”
+                     I usually learn by doing.
                  </p>
                  <p className="text-lg md:text-2xl text-gray-500">
                      Sometimes by breaking things first.
